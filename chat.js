@@ -18,7 +18,8 @@ config = {
     minute: "numeric",
   }),
   campoRicerca: document.querySelector("#task-header input"),
-  sendButton: document.querySelector(".send"),
+  sendButtonChat: document.querySelector("#chat-text-send"),
+  sendButtonTask: document.querySelector("#task-text-send"),
 };
 
 function initApp() {
@@ -58,7 +59,7 @@ function inserimentoMessaggio() {
   const inserimento = (e) => {
     e.preventDefault();
     if (
-      (e.key === "Enter" || e.target.classList.contains("send")) &&
+      (e.key === "Enter" || e.target.id === "chat-text-send") &&
       config.campoInserimento.value.trim() !== ""
     ) {
       const messageUser = document.createElement("div");
@@ -71,12 +72,16 @@ function inserimentoMessaggio() {
   };
 
   config.campoInserimento.addEventListener("keyup", inserimento);
-  config.sendButton.addEventListener("click", inserimento);
+  config.sendButtonChat.addEventListener("click", inserimento);
 }
 
 function inserimentoTask() {
   const inserimento = (e) => {
-    if (e.key === "Enter") {
+    e.preventDefault();
+    if (
+      (e.key === "Enter" || e.target.id === "task-text-send") &&
+      config.taskInserimento.value.trim() !== ""
+    ) {
       const task = document.createElement("div");
       task.classList.add("task-item");
       task.innerHTML = `<p class="task-text">${config.taskInserimento.value}</p> 
@@ -89,6 +94,7 @@ function inserimentoTask() {
     }
   };
   config.taskInserimento.addEventListener("keyup", inserimento);
+  config.sendButtonTask.addEventListener("click", inserimento);
 }
 
 function completaTask() {

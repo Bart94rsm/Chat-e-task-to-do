@@ -1,110 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/chat.css">
+    <link rel="stylesheet" href="./assets/css/chat.css" />
     <script src="chat.js" defer></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <main>
+      <section id="app-services">
+        <div id="chat-icon" data-stepmargin="0">
+          <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <title>message-text</title>
+              <path
+                fill="#0F0"
+                d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9H18V11H6M14,14H6V12H14M18,8H6V6H18"
+              />
+            </svg>
+          </a>
+        </div>
 
-        <section id="app-services" >
-
-            <div id="chat-icon" data-stepmargin="0">
-                <a href="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <title>message-text
-                    </title><path fill="#0F0" d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9H18V11H6M14,14H6V12H14M18,8H6V6H18" /></svg>
-                </a>
-                </div>
-
-            <div id="to-do-app" data-stepmargin="1">
-                <a href="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <title>list-status</title><path fill="#FFF"d="M16.5 11L13 7.5L14.4 6.1L16.5 8.2L20.7 4L22.1 5.4L16.5
+        <div id="to-do-app" data-stepmargin="1">
+          <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <title>list-status</title>
+              <path
+                fill="#FFF"
+                d="M16.5 11L13 7.5L14.4 6.1L16.5 8.2L20.7 4L22.1 5.4L16.5
                      11M11 7H2V9H11V7M21 13.4L19.6 12L17 14.6L14.4 12L13 13.4L15.6 16L13 18.6L14.4 20L17 
-                     17.4L19.6 20L21 18.6L18.4 16L21 13.4M11 15H2V17H11V15Z" /></svg>
-                    </a>
-            </div>
-        </section>
+                     17.4L19.6 20L21 18.6L18.4 16L21 13.4M11 15H2V17H11V15Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
 
-            <section id="page-content"> <!-- contenitore pagine, scorrono con javascript -->
+      <section id="page-content">
+        <!-- contenitore pagine, scorrono con javascript -->
 
-            <article id="chat"> <!-- contenitore pagina chat -->
+        <article id="chat">
+          <!-- contenitore pagina chat -->
 
-                <section id="chat-wrapper"> <!-- contenitore chat -->
+          <section id="chat-wrapper">
+            <!-- contenitore chat -->
 
-                    <section id="chat-body"> <!-- contenitore corpo chat inserimento dinamico-->
-                        <div class="message user">
-                            <span class="time">10:31</span>
-                                <p>Messaggio User</p>
-                            
-                        </div>
+            <section id="chat-body">
+              <!-- contenitore corpo chat inserimento dinamico-->
+              <div class="message user">
+                <span class="time">10:31</span>
+                <p>Messaggio User</p>
+              </div>
 
-                        <div class="message admin">
-                            <span class="time">10:32</span>
-                                <p>Messaggio Admin</p>
-                            
-                        </div>
-                    </section>
-                        <section id="chat-footer">  <!-- contenitore footer -->
+              <div class="message admin">
+                <span class="time">10:32</span>
+                <p>Messaggio Admin</p>
+              </div>
+            </section>
+            <section id="chat-footer">
+              <!-- contenitore footer -->
 
-                           <div class="new-item-wrapper"> <!-- contenitore dell'elemento del footer -->
-                            
-                            <textarea id="chat-text" placeholder="Aa"></textarea>
-                            <span id="chat-send"><img class="send" src="img/send-variant.svg" alt="">
-                            </span> <!-- modificato colore in file svg con fill="" -->
-                        </div> <!-- span serve per creare cerchio colorato attorno svg -->
-                        </section>
-                    
-                </section>
-            </article>
+              <div class="new-item-wrapper">
+                <!-- contenitore dell'elemento del footer -->
 
-            <article id="to-do"> <!-- contenitore pagina to-do -->
+                <textarea id="chat-text" placeholder="Aa"></textarea>
+                <span id="chat-send"
+                  ><img id="chat-text-send" src="img/send-variant.svg" alt="" />
+                </span>
+                <!-- modificato colore in file svg con fill="" -->
+              </div>
+              <!-- span serve per creare cerchio colorato attorno svg -->
+            </section>
+          </section>
+        </article>
 
-                <section id="to-do-wrapper"> <!-- contenitore task -->
+        <article id="to-do">
+          <!-- contenitore pagina to-do -->
 
-                    <section id="task-header"> <!-- contenitore task alto -->
-                        <input type="text" id="task-search" placeholder="Ricerca task">
-                    </section>
+          <section id="to-do-wrapper">
+            <!-- contenitore task -->
 
-                    <section id="task-body"> <!-- contenitore task body -->
-                        <div class="task-item completed"> <!-- inserimento dinamico con javascript -->
-                            <p class="task-text">Primo Task</p>
-                            <svg class="task-completed-check"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <title>check-all</title><path fill="#e34abd"d="M0.41,13.41L6,19L7.41,17.58L1.83,12M22.24,
+            <section id="task-header">
+              <!-- contenitore task alto -->
+              <input type="text" id="task-search" placeholder="Ricerca task" />
+            </section>
+
+            <section id="task-body">
+              <!-- contenitore task body -->
+              <div class="task-item completed">
+                <!-- inserimento dinamico con javascript -->
+                <p class="task-text">Primo Task</p>
+                <svg
+                  class="task-completed-check"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>check-all</title>
+                  <path
+                    fill="#e34abd"
+                    d="M0.41,13.41L6,19L7.41,17.58L1.83,12M22.24,
                                 5.58L11.66,16.17L7.5,12L6.07,13.41L11.66,19L23.66,7M18,7L16.59,5.58L10.24,
-                                11.93L11.66,13.34L18,7Z" /></svg>
-                                <img class="bin" src="./img/delete-outline.svg" alt="">
-                        </div>
-                        <div class="task-item">
-                            <p class="task-text">Secondo Task</p>
-                            <svg class="task-check"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <title>check-bold</title><path fill="#FFF"d="M9,20.42L2.79,14.21L5.62,11.38L9,
-                                14.77L18.88,4.88L21.71,7.71L9,20.42Z" /></svg>
-                                <img class="bin"src="./img/delete-outline.svg" alt="">
-                        </div>
-                            
-                    </section>
+                                11.93L11.66,13.34L18,7Z"
+                  />
+                </svg>
+                <img class="bin" src="./img/delete-outline.svg" alt="" />
+              </div>
+              <div class="task-item">
+                <p class="task-text">Secondo Task</p>
+                <svg
+                  class="task-check"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>check-bold</title>
+                  <path
+                    fill="#FFF"
+                    d="M9,20.42L2.79,14.21L5.62,11.38L9,
+                                14.77L18.88,4.88L21.71,7.71L9,20.42Z"
+                  />
+                </svg>
+                <img class="bin" src="./img/delete-outline.svg" alt="" />
+              </div>
+            </section>
 
-                    <section id="task-footer"> <!-- contenitore task footer -->
-                        <div class="new-item-wrapper">
-                        <textarea id="task-text" placeholder=""></textarea>
-                            <span><img class="send" src="img/send-variant.svg" alt=""></span>
-                        </div>
-                                                
-
-                    </section>
-                </section>
-            </article>
-        </section>
-            
-        
-      
+            <section id="task-footer">
+              <!-- contenitore task footer -->
+              <div class="new-item-wrapper">
+                <textarea id="task-text" placeholder=""></textarea>
+                <span
+                  ><img id="task-text-send" src="img/send-variant.svg" alt=""
+                /></span>
+              </div>
+            </section>
+          </section>
+        </article>
+      </section>
     </main>
-
-</body>
+  </body>
 </html>
