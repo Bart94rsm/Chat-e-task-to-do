@@ -1,269 +1,236 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
 
-
-:root{
-    font-size: 1rem;
-    --gap-xs:1rem;
-    --gap-s:2rem;
-    --gap-m:4rem;
-    --gap-l:6rem;
-    --gap-xl:9rem;
-    color: white;
-    --color-design: #e34abd;   
-    --color-bg:#18171A;
+:root {
+  font-size: 1rem;
+  --gap-xs: 1rem;
+  --gap-s: 2rem;
+  --gap-m: 4rem;
+  --gap-l: 6rem;
+  --gap-xl: 9rem;
+  color: white;
+  --color-design: #e34abd;
+  --color-bg: #18171a;
 }
 
-*,::after,::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-input,textarea{
-    outline: none;
-    border: none;
-    background: transparent;
-    
+input,
+textarea {
+  outline: none;
+  border: none;
+  background: transparent;
 }
 
-body,html{
-   
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
-body{
-    font-family: sans-serif;
-    background: var(--color-bg)
+body {
+  font-family: sans-serif;
+  background: var(--color-bg);
 }
 
-.hide{
-    display:none; /*classe per elementi che voglio nascondere*/
+.hide {
+  display: none; /*classe per elementi che voglio nascondere*/
 }
 
+#app-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: fixed;
+  width: 85vw;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  border-top: 1px solid lightgray;
+  height: 80px;
+}
 
-
-#app-services{
-    display:grid;
+@media (min-width: 768px) {
+  #app-services {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    position:fixed;
-    width:85vw;
-    bottom:0;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
+    position: fixed;
+    bottom: 0;
+    left: 4rem;
+    right: 4rem;
     border-top: 1px solid lightgray;
     height: 80px;
-    
-   
-    
+  }
 }
 
-
-@media(min-width:768px){
-    #app-services{
-        display:grid;
-        grid-template-columns: repeat(2, 1fr);
-        position:fixed;
-        bottom:0;
-        left:4rem;
-        right:4rem;
-        border-top: 1px solid lightgray;
-        height: 80px;
-        
-       
-        
-    }
-
+#chat-icon,
+#to-do-app {
+  display: grid;
+  place-content: center;
 }
 
-
-#chat-icon, #to-do-app{
-    display: grid;
-    place-content: center;
-    
-    
-
+svg,
+.send {
+  width: 1.8em;
+  cursor: pointer;
 }
-
-
-svg,.send{
-    width: 1.8em;
-}
-
-
 
 /*stile pages*/
 
-#chat-wrapper{ /*non deve occupare 100%*/
-    max-width: 600px;
-    margin:auto;
-    height: calc(100vh - 80px);
+#chat-wrapper {
+  /*non deve occupare 100%*/
+  max-width: 600px;
+  margin: auto;
+  height: calc(100vh - 80px);
 }
 
-#page-content{
-    width: 200vw; /* avendo messo vw in body devo usare stessa unita di misura */
-    display: flex; /*cosi le due pagine si affiancano */
+#page-content {
+  width: 200vw; /* avendo messo vw in body devo usare stessa unita di misura */
+  display: flex; /*cosi le due pagine si affiancano */
 }
 
-#chat{
-    width: 100vw;
-    margin-left:0vw;
-    transition: all 1s;
+#chat {
+  width: 100vw;
+  margin-left: 0vw;
+  transition: all 1s;
 }
 
-#to-do{
-    width: 100vw;
-    
+#to-do {
+  width: 100vw;
 }
 
-#chat-body{
-    height: calc(100vh - 180px);
-    overflow-y:auto;
+#chat-body {
+  height: calc(100vh - 180px);
+  overflow-y: auto;
 }
 
-.new-item-wrapper{
+.new-item-wrapper {
+  display: flex;
+  background: white;
+  border-radius: 4rem;
+  height: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .new-item-wrapper {
     display: flex;
     background: white;
     border-radius: 4rem;
     height: 2.5rem;
-  
-    
- 
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
-@media(max-width:768px){
-    .new-item-wrapper{
-        display: flex;
-        background: white;
-        border-radius: 4rem;
-        height: 2.5rem;
-        width: 80%;
-        margin: 0 auto;
-        
-     
-    }
+.new-item-wrapper > textarea {
+  width: calc(100% - 2rem);
+  font-size: 1rem;
+  padding-inline: 1em;
+  resize: none; /*toglie icona ridimensionamento textarea*/
+  padding-top: 0.5rem;
+  overflow: hidden; /*toglie sbarra scorrimento */
+  line-height: 1.2em;
 }
 
-.new-item-wrapper>textarea{
-    width: calc(100% - 2rem);
-    font-size: 1rem;
-    padding-inline: 1em;
-    resize: none; /*toglie icona ridimensionamento textarea*/
-    padding-top: 0.5rem;
-    overflow: hidden; /*toglie sbarra scorrimento */
-    line-height: 1.2em;
-   
-    
+.new-item-wrapper > span {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-design);
+  display: grid;
+  place-content: center;
 }
 
-.new-item-wrapper>span{
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: var(--color-design);
-    display: grid;
-    place-content: center;
+.message {
+  margin-block: 2rem;
+  display: grid;
 }
 
-
-
-
-.message{
-    margin-block:2rem;
-    display: grid;
+.message.user {
+  grid-template-columns: 1fr 80px;
 }
 
-.message.user{
-    grid-template-columns: 1fr 80px;
-   
-    
+.message.user > p {
+  order: -1;
+  background: var(--color-design);
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+  border-bottom-left-radius: 4rem;
+  padding: 1.6rem 1.6rem;
 }
 
-.message.user>p{
-    order:-1;
-    background: var(--color-design);
-    border-top-left-radius: 4rem;
-    border-top-right-radius: 4rem;
-    border-bottom-left-radius: 4rem;
-    padding: 1.6rem 1.6rem;
+.message.admin {
+  grid-template-columns: 80px 1fr;
 }
 
-.message.admin{
-    grid-template-columns: 80px 1fr ;
-    
-}
-
-.message.admin>p{
-    background:white;
-    color: black;
-    padding:1.6rem 1.6rem;
-    border-top-left-radius: 4rem;
-    border-top-right-radius: 4rem;
-    border-bottom-right-radius: 4rem;
-    
+.message.admin > p {
+  background: white;
+  color: black;
+  padding: 1.6rem 1.6rem;
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+  border-bottom-right-radius: 4rem;
 }
 
 /*stile seconda pagina*/
 
-#to-do-wrapper{
-    max-width: 600px;
-    margin: auto;
+#to-do-wrapper {
+  max-width: 600px;
+  margin: auto;
 }
 
-#task-header{
-    height: 80px;
+#task-header {
+  height: 80px;
 }
 
-#task-body{
-    height: calc(100vh - 240px);
+#task-body {
+  height: calc(100vh - 240px);
 }
 
-.task-item img{
-    width: 2em;
- 
+.task-item img {
+  width: 2em;
 }
 
-
-#task-header{
-    max-width: 80%;
-    margin:0 auto;
-    display: grid;
-   place-content: center;
-   grid-template-columns: 1fr;
-
+#task-header {
+  max-width: 80%;
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr;
 }
 
-#task-header>input{
-    background:gray;
-    height: 3em;
-    border-radius: 3rem;
-    padding-left: 1em;
-    width: 60%;
-    margin: 0 auto;
-    
-    }
-#task-header>::placeholder{
-    color: white;
+#task-header > input {
+  background: gray;
+  height: 3em;
+  border-radius: 3rem;
+  padding-left: 1em;
+  width: 60%;
+  margin: 0 auto;
+}
+#task-header > ::placeholder {
+  color: white;
 }
 
-.task-item{
-    margin-bottom: 1em;
-    border-radius: 3rem;
-    padding:1em 1em;
-    display: grid;
-    grid-template-columns: 1fr 40px 40px;
-    align-items: center;
-    border:1px solid gray;
-    
+.task-item {
+  margin-bottom: 1em;
+  border-radius: 3rem;
+  padding: 1em 1em;
+  display: grid;
+  grid-template-columns: 1fr 40px 40px;
+  align-items: center;
+  border: 1px solid gray;
 }
 
-.task-item.completed p{
-    text-decoration:line-through ;
+.task-item.completed p {
+  text-decoration: line-through;
 }
 
-.task-item :is(img,svg){
-    cursor:pointer;
+.task-item :is(img, svg) {
+  cursor: pointer;
 }
-
